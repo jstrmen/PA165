@@ -48,6 +48,6 @@ public interface CarShopStorageService {
 	 * @throw RequestedCarNotFoundException in case car doesn't exist in the
 	 *        storage
 	 */
-	// void sellCar(Car car) throws RequestedCarNotFoundException;
+	 void sellCar(Car car) throws RequestedCarNotFoundException;
 
 }

@@ -13,6 +13,8 @@ import cz.fi.muni.carshop.enums.CarTypes;
 
 public class CarShopStorageServiceImpl implements CarShopStorageService {
 
+	CarShopStorage storage;
+
 	@Override
 	public Optional<Car> isCarAvailable(Color color, CarTypes type) {
 		Map<CarTypes, List<Car>> allCars = CarShopStorage.getInstancce().getCars();
@@ -31,6 +33,11 @@ public class CarShopStorageServiceImpl implements CarShopStorageService {
 	@Override
 	public void addCarToStorage(Car car) {
 		CarShopStorage.getInstancce().getCars().computeIfAbsent(car.getType(), x -> new ArrayList<>()).add(car);
+	}
+
+	@Override
+	public void sellCar(Car car) throws RequestedCarNotFoundException{
+//		storage.getCars;
 	}
 
 }
